@@ -1,0 +1,5 @@
+<div class="d-flex align-items-center flex-column mb-3 bg-dark semaforo">
+  <div class="p-2 mt-2 mb-2 rojo" [ngClass]="{'active': color === 'rojo', 'gris': color !== 'rojo'}"></div>
+  <div class="p-2 amarillo" [ngClass]="{'active': color === 'amarillo', 'gris': color !== 'amarillo'}"></div>
+  <div class=" p-2 mt-2 mb-2 verde" [ngClass]="{'active': color === 'verde', 'gris': color !== 'verde'}"></div>
+</div>

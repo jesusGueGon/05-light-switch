@@ -1,0 +1,33 @@
+.semaforo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 150px;
+}
+
+.rojo, .amarillo, .verde {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.rojo {
+  background-color: red;
+}
+
+.amarillo {
+  background-color: yellow;
+}
+
+.verde {
+  background-color: green;
+}
+
+.gris {
+  background-color: gray;
+}
+
+.active {
+  border: 5px solid white;
+}
