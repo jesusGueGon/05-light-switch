@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ComunicationService {
 
-  private checkboxValueSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  checkboxValue$ = this.checkboxValueSubject.asObservable();
+  // creamos el subject que nos permite crear flujos de datos dinamicos de rxjs
+  private colorSource = new Subject<boolean>();
+  // creamos el observable color
+  color$ = this.colorSource.asObservable();
 
-  emitCheckboxValue(value: boolean): void {
-    this.checkboxValueSubject.next(value);
+  // funcion emitColor que nos emite el subject si el booleano que se le pasa esta a true
+  emitColor(isChecked: boolean): void {
+    this.colorSource.next(isChecked);
   }
 }

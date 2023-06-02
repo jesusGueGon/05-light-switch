@@ -1,5 +1,9 @@
+<!-- NgClass nos permite aplicar una o otra clase del html a traves de la condicion boolean
+    En este caso nos mostrará el color rojo o gris, amarillo o gris, y verde o gris
+    por defecto esta todo en gris-->
+
 <div class="d-flex align-items-center flex-column mb-3 bg-dark semaforo">
-  <div class="p-2 mt-2 mb-2 rojo" [ngClass]="{'active': color === 'rojo', 'gris': color !== 'rojo'}"></div>
-  <div class="p-2 amarillo" [ngClass]="{'active': color === 'amarillo', 'gris': color !== 'amarillo'}"></div>
-  <div class=" p-2 mt-2 mb-2 verde" [ngClass]="{'active': color === 'verde', 'gris': color !== 'verde'}"></div>
+  <div class="mb-2 light red" [ngClass]="currentColor === 'rojo' ? 'red active' : 'gris'"></div>
+  <div class="light amarillo" [ngClass]="currentColor === 'amarillo' ? 'amarillo active' : 'gris'"></div>
+  <div class="mt-2 light verde" [ngClass]="currentColor === 'verde' ? 'verde active' : 'gris'"></div>
 </div>

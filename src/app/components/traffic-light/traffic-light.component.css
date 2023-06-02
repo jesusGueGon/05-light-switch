@@ -6,13 +6,13 @@
   width: 150px;
 }
 
-.rojo, .amarillo, .verde {
-  width: 100px;
-  height: 100px;
+.light {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
 }
 
-.rojo {
+.red {
   background-color: red;
 }
 
@@ -29,5 +29,5 @@
 }
 
 .active {
-  border: 5px solid white;
+  border: 2px solid black;
 }

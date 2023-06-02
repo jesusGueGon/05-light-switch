@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { ComunicationService } from 'src/app/services/comunication.service';
 
 @Component({
   selector: 'app-controller',
@@ -7,13 +8,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class ControllerComponent {
 
-  @Output() startCycle: EventEmitter<void> = new EventEmitter<void>();
-  isCycleOn: boolean = false;
+  // booleano que nos permite controlar si esta activo o no el semaforo
+  isChecked: boolean = false;
 
-  toggleCycle(checked: boolean): void {
-    this.isCycleOn = checked;
-    if (this.isCycleOn) {
-      this.startCycle.emit();
-    }
+  constructor(private communicationService: ComunicationService) {}
+
+  // funcion que nos permite emirtir el valor del booleano a traves del servicio
+  toggleCycle(): void {
+    this.communicationService.emitColor(this.isChecked);
   }
 }

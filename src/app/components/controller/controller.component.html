@@ -1,3 +1,7 @@
 <h1>Controlador</h1>
-
-<button class="btn btn-primary" (click)="startCycle.emit()">Encendido</button>
+<!-- El NgModel nos permite intercambiar datos de forma bidireccional
+  al pulsar el check entre la vista y el componente -->
+<label>
+  <input type="checkbox" [(ngModel)]="isChecked" (change)="toggleCycle()">
+  {{isChecked?"Encendido" : "Apagado"}}
+</label>
