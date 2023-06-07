@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Subscription, interval } from 'rxjs';
 import { ComunicationService } from 'src/app/services/comunication.service';
 
@@ -13,6 +13,8 @@ export class TrafficLightComponent {
   currentColor: string = 'gris';
   // Iniciamos la subscripcion
   subscription: Subscription | undefined;
+
+  @Output() eventoColor = new EventEmitter<string>
 
   constructor(private communicationService: ComunicationService) {}
 
@@ -42,6 +44,11 @@ export class TrafficLightComponent {
       this.currentColor = colors[index];
       index = (index + 1) % colors.length;
     });
+
+  }
+
+  enviarColor() {
+    this.eventoColor.emit(this.currentColor);
   }
 
   // para parar la secuencia hacemos una pequeña comprobacion primero

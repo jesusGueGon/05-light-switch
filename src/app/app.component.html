@@ -3,9 +3,9 @@
 <hr>
 
 <!-- componente semaforo que contiene las luces del semaforo que iran cambiando -->
-<app-traffic-light></app-traffic-light>
+<app-traffic-light (eventoColor)="getColor($event)"></app-traffic-light>
 
 <hr>
-
+{{currentColor}}
 <!-- componente controlador que nos permite controlar si la secuencia se activa o se para -->
-<app-controller></app-controller>
+<app-controller [currentColor]="currentColor"></app-controller>

@@ -10,4 +10,11 @@ import { ComunicationService } from './services/comunication.service';
 
 export class AppComponent {
 
+  currentColor: string = '';
+
+  getColor(color: string) {
+    this.currentColor = color;
+    console.log(this.currentColor);
+  }
+
 }

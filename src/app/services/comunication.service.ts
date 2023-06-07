@@ -11,8 +11,18 @@ export class ComunicationService {
   // creamos el observable color
   color$ = this.colorSource.asObservable();
 
+  private colorSend = new Subject<string>();
+
+  colors$ = this.colorSend.asObservable();
+
+
   // funcion emitColor que nos emite el subject si el booleano que se le pasa esta a true
   emitColor(isChecked: boolean): void {
     this.colorSource.next(isChecked);
   }
+
+  sendColor(currentColor: string): void {
+    this.colorSend.next(currentColor);
+  }
+
 }
